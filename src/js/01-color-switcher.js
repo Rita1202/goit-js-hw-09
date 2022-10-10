@@ -3,10 +3,10 @@ const stopBtn = document.querySelector('[data-stop]');
 
 startBtn.addEventListener('click', onClickStartHandler);
 
-function onClickStartHandler() {
+function onClickStartHandler(event) {
+  event.target.disabled = true;
   intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
-    startBtn.setAttribute('disabled', true);
   }, 1000);
 }
 
